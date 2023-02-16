@@ -27,4 +27,12 @@ export const rules: FormRules = {
   'clientData.gazHoz.pos': [ { required: true, message: 'Поле должно быть заполнено', trigger: 'blur' } ],
   'clientData.gazHoz.phone': [ { required: true, message: 'Поле должно быть заполнено', trigger: 'blur' } ],
   'clientData.curator': [ { required: true, message: 'Поле должно быть заполнено', trigger: 'blur' } ],
+  'generalData.plan': [ { required: true, message: 'Поле должно быть заполнено', trigger: 'blur' } ],
+  'generalData.currentYear': [ { required: true, message: 'Поле должно быть заполнено', trigger: 'blur' } ],
+  'generalData.currentYearSuppose': [ { required: true, message: 'Поле должно быть заполнено', trigger: 'blur' } ],
+  'generalData.factLastYear': [ { required: true, message: 'Поле должно быть заполнено', trigger: 'blur' } ],
+  'generalData.factDeviation': [ { required: true, message: 'Поле должно быть заполнено', trigger: 'blur' } ],
+  'generalData.periodLastYear': [ { required: true, type: 'array', message: 'Поле должно быть заполнено', trigger: 'blur' } ],
+  'generalData.count': [ { required: true, message: 'Поле должно быть заполнено', trigger: 'blur' } ],
+  'generalData.reason': [ { required: true, message: 'Поле должно быть заполнено', trigger: 'change' } ],
 };

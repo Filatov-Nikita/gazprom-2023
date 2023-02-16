@@ -14,6 +14,7 @@
             {{ month }}
           </th>
           <th class="t-th tw-w-[70px]">Итого</th>
+          <th class="t-th tw-w-[85px]"></th>
         </tr>
       </thead>
       <tbody>

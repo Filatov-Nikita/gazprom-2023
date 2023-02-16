@@ -65,6 +65,14 @@ export const useFormStore = defineStore('formStore', () => {
     'clientData.gazHoz.pos': '',
     'clientData.gazHoz.phone': '',
     'clientData.curator': '',
+    'generalData.plan': '',
+    'generalData.currentYear': '',
+    'generalData.currentYearSuppose': '',
+    'generalData.factLastYear': '',
+    'generalData.factDeviation': '',
+    'generalData.periodLastYear': undefined,
+    'generalData.count': '',
+    'generalData.reason': '',
   });
 
   return {

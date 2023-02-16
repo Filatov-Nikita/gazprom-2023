@@ -1,4 +1,4 @@
-import type { UploadFile } from 'element-plus';
+import type { UploadFile, DateModelType } from 'element-plus';
 
 export interface Eq {
   id: number,
@@ -62,4 +62,12 @@ export interface Values {
   'clientData.gazHoz.pos': string,
   'clientData.gazHoz.phone': string,
   'clientData.curator': string,
+  'generalData.plan': string,
+  'generalData.currentYear': string,
+  'generalData.currentYearSuppose': string,
+  'generalData.factLastYear': string,
+  'generalData.factDeviation': string,
+  'generalData.periodLastYear': [DateModelType, DateModelType] | undefined,
+  'generalData.count': string,
+  'generalData.reason': string,
 }
