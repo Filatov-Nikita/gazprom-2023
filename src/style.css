@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background: theme('colors.gray.200');
+  }
+}
+
+@layer components {
+  .fieldset-label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .table-label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .divider {
+    --el-border-color: #b7b7b7;
+  }
+
+  .date-picker {
+    --el-date-editor-width: 100% !important;
+  }
+
+  .date-picker .el-input__wrapper {
+    width: 100% !important;
+  }
+
+  .form-item .el-form-item__label {
+    line-height: 1 !important;
+  }
+
+  .header-table {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .vert-top {
+    vertical-align: top !important;
+  }
+
+  .app-table {
+    table-layout: fixed;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 6px;
+    /* border: 1px solid theme('colors.gray.300'); */
+  }
+
+  .app-table__th {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 12px;
+    color: theme('colors.gray.500');
+    text-align: left;
+  }
+
+  .app-table__td {
+    padding: 8px 12px;
+    vertical-align: top;
+  }
+
+  .t {
+    width: 80px;
+  }
+
+  .fields-wrapper {
+    max-width: 700px;
+  }
+}
