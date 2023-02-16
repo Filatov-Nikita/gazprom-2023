@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia';
-import { reactive, ref } from 'vue';
+import { reactive } from 'vue';
 import type { Values } from '../types/form';
 
 export const useFormStore = defineStore('formStore', () => {
-  const values: Values = reactive({
+  const values = reactive<Values>({
     'primary.typePerc': '',
     'primary.typeReq': '',
     'percData.inn': '',
@@ -57,7 +57,14 @@ export const useFormStore = defineStore('formStore', () => {
         nov: 0,
         dec: 0
       }
-    ]
+    ],
+    'clientData.dir': '',
+    'clientData.pos': '',
+    'clientData.phone': '',
+    'clientData.gazHoz.name': '',
+    'clientData.gazHoz.pos': '',
+    'clientData.gazHoz.phone': '',
+    'clientData.curator': '',
   });
 
   return {

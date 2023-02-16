@@ -23,7 +23,7 @@
       <FieldsetGasEq class="tw-mb-4" />
       <FieldsetGasEqMesm class="tw-mb-4" />
     </div>
-    <FieldsetGasPoints />
+    <FieldsetGasPoints class="tw-mb-4" />
   </div>
 </template>
 <script setup lang="ts">

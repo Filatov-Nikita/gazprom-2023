@@ -54,5 +54,12 @@ export interface Values {
   'gazData.yearCapacity': string,
   'gazData.equipment': Eq[],
   'gazData.equipmentMesm': Mesm[],
-  'gazPoints': GasPoint[]
+  'gazPoints': GasPoint[],
+  'clientData.dir': string,
+  'clientData.pos': string,
+  'clientData.phone': string,
+  'clientData.gazHoz.name': string,
+  'clientData.gazHoz.pos': string,
+  'clientData.gazHoz.phone': string,
+  'clientData.curator': string,
 }
