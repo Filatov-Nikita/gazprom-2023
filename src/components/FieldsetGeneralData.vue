@@ -16,7 +16,7 @@
     <ElFormItem class="form-item" label="Отклонение расчетных объемов на плановый год относительно факта потребления прошлого года" prop="generalData.factDeviation">
       <ElInput v-model="fStore.values['generalData.factDeviation']" placeholder="%" />
     </ElFormItem>
-    <ElFormItem class="form-item" label="Период потребления в прошлом году" prop="generalData.plan">
+    <ElFormItem class="form-item" label="Период потребления в прошлом году" prop="generalData.periodLastYear">
       <ElDatePicker
         type="monthrange"
         v-model="fStore.values['generalData.periodLastYear']"

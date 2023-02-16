@@ -24,6 +24,8 @@
           <FieldsetClientData />
           <ElDivider class="divider" />
           <FieldsetGeneralData />
+          <ElDivider class="divider" />
+          <FieldsetEnergyNas />
         </div>
         <ElButton class="tw-mt-8" size="large" @click="submitForm(formRef)">
           Отправить
@@ -41,6 +43,7 @@ import FieldsetAccount from './components/FieldsetAccount.vue';
 import FieldsetGasData from './components/FieldsetGasData.vue';
 import FieldsetClientData from './components/FieldsetClientData.vue';
 import FieldsetGeneralData from './components/FieldsetGeneralData.vue';
+import FieldsetEnergyNas from './components/FieldsetEnergyNas.vue';
 import { ref } from 'vue';
 import { rules } from './globals/form-rules';
 import { useFormStore } from './store/form';

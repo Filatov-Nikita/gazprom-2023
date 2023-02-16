@@ -73,6 +73,14 @@ export const useFormStore = defineStore('formStore', () => {
     'generalData.periodLastYear': undefined,
     'generalData.count': '',
     'generalData.reason': '',
+    'energyNas.fuelReduce': '',
+    'energyNas.gasSrc': '',
+    'energyNas.total': '',
+    'energyNas.tcj': '',
+    'energyNas.budget': '',
+    'energyNas.otherProd': '',
+    'energyNas.energyPerc': '',
+    'energyNas.src': '',
   });
 
   return {
