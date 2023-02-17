@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "element-plus": "^2.2.30",
+    "maska": "^2.1.7",
     "pinia": "^2.0.30",
     "vue": "^3.2.45"
   },
