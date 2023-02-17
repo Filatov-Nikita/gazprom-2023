@@ -90,7 +90,15 @@ export const useFormStore = defineStore('formStore', () => {
     'energyTco.gasPercProd': '',
     'energyTco.gasPercNas': '',
     'energyTco.condition': '',
-    'comment': ''
+    'comment': '',
+    'attachments': null,
+    'files.tep': null,
+    'files.jkh': null,
+    'files.tco': null,
+    'files.gio': null,
+    'files.aboutDir': null,
+    'files.financeBudget': null,
+    'files.contractCopies': null,
   });
 
   const isType1 = computed(() => {
