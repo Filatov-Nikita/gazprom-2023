@@ -5,7 +5,7 @@
         class="t-td"
         v-for="month in monthsShort"
       >
-        <ElFormItem label-width="0px" required :prop="`gazPoints.${index}.${month}`">
+        <ElFormItem label-width="0px" :rules="requiredRule" :prop="`gazPoints.${index}.${month}`">
           <ElInputNumber v-model="point[month]" :min="0" placeholder="тыс. м3" :controls="false" />
         </ElFormItem>
       </td>
@@ -22,6 +22,7 @@
   import { monthsShort } from '../globals/constants';
   import { computed } from 'vue';
   import type { GasPoint } from '../types/form';
+  import { requiredRule } from '../globals/form-rules';
 
   const props = defineProps<{
     point: GasPoint,

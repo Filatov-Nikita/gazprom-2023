@@ -19,7 +19,7 @@
             <ElFormItem
               label-width="0px"
               :prop="makeProp(index, 'name')"
-              :rules="requireRule"
+              :rules="requiredRule"
             >
               <ElInput v-model="fStore.values['gazData.equipment'][index].name" />
             </ElFormItem>
@@ -27,8 +27,8 @@
           <td class="app-table__td">
             <ElFormItem
               label-width="0px"
-              :prop="makeProp(index, 'number')"
-              :rules="requireRule"
+              :prop="makeProp(index, 'count')"
+              :rules="[requiredRule, numberRule]"
             >
               <ElInput v-model="fStore.values['gazData.equipment'][index].count" />
             </ElFormItem>
@@ -36,14 +36,14 @@
           <td class="app-table__td">
             <ElFormItem
               label-width="0px"
-              :prop="makeProp(index, 'number')"
-              :rules="requireRule"
+              :prop="makeProp(index, 'max')"
+              :rules="[requiredRule, numberRule]"
             >
               <ElInput v-model="fStore.values['gazData.equipment'][index].max" />
             </ElFormItem>
           </td>
           <td class="app-table__td">
-            <ElUpload accept="application/pdf" class="upload-demo" :auto-upload="false" :limit="1" @change="onChange($event, index)">
+            <ElUpload accept="image/png,image/jpeg" class="upload-demo" :auto-upload="false" :limit="1" @change="onChange($event, index)">
               <div>
                 <el-button type="primary">Загрузить</el-button>
               </div>
@@ -67,21 +67,9 @@
 import { ElButton, ElInput, ElFormItem, ElUpload, type UploadFile } from 'element-plus';
 import { useFormStore } from '../store/form';
 import { computed } from 'vue';
+import { numberRule, requiredRule } from '../globals/form-rules';
 
 const fStore = useFormStore();
-
-const requireRule = {
-  required: true,
-  message: 'Обязательное поле',
-  trigger: 'blur',
-} as const;
-
-const dateRule = {
-  type: 'date',
-  required: true,
-  message: 'Поле должно быть датой',
-  trigger: 'change'
-} as const;
 
 function makeProp(index: number, prop: string) {
   return ['gazData.equipment', index.toString(), prop];
@@ -105,6 +93,6 @@ function removeRow(index: number) {
 
 function onChange(e: UploadFile, index: number) {
   console.log(e);
-  fStore.values['gazData.equipment'][index].passport = e;
+  // fStore.values['gazData.equipment'][index].passport = e;
 }
 </script>

@@ -20,7 +20,7 @@
             <ElFormItem
               label-width="0px"
               :prop="makeProp(index, 'name')"
-              :rules="requireRule"
+              :rules="requiredRule"
             >
               <ElInput v-model="fStore.values['gazData.equipmentMesm'][index].name" />
             </ElFormItem>
@@ -29,7 +29,7 @@
             <ElFormItem
               label-width="0px"
               :prop="makeProp(index, 'number')"
-              :rules="requireRule"
+              :rules="[requiredRule, numberRule]"
             >
               <ElInput v-model="fStore.values['gazData.equipmentMesm'][index].number" />
             </ElFormItem>
@@ -38,7 +38,7 @@
             <ElFormItem
               label-width="0px"
               :prop="makeProp(index, 'from')"
-              :rules="dateRule"
+              :rules="[requiredRule, dateRule]"
             >
               <ElDatePicker
                 v-model="fStore.values['gazData.equipmentMesm'][index].from"
@@ -52,7 +52,7 @@
             <ElFormItem
               label-width="0px"
               :prop="makeProp(index, 'to')"
-              :rules="dateRule"
+              :rules="[requiredRule, dateRule]"
             >
               <ElDatePicker
                 v-model="fStore.values['gazData.equipmentMesm'][index].to"
@@ -66,7 +66,7 @@
             <ElUpload
               class="upload-demo"
               :auto-upload="false"
-              accept="application/pdf"
+              accept="image/png,image/jpeg"
               :limit="1"
               @change="onChange($event, index)"
               @remove="fStore.values['gazData.equipmentMesm'][index].passport = null"
@@ -94,21 +94,9 @@
 import { ElButton, ElInput, ElFormItem, ElDatePicker, ElUpload, type UploadFile} from 'element-plus';
 import { useFormStore } from '../store/form';
 import { computed } from 'vue';
+import { requiredRule, dateRule, numberRule } from '../globals/form-rules';
 
 const fStore = useFormStore();
-
-const requireRule = {
-  required: true,
-  message: 'Обязательное поле',
-  trigger: 'blur',
-} as const;
-
-const dateRule = {
-  type: 'date',
-  required: true,
-  message: 'Поле должно быть датой',
-  trigger: 'change'
-} as const;
 
 function makeProp(index: number, prop: string) {
   return ['gazData.equipmentMesm', index.toString(), prop];
@@ -133,6 +121,6 @@ function removeRow(index: number) {
 
 function onChange(e: UploadFile, index: number) {
   console.log(e);
-  fStore.values['gazData.equipmentMesm'][index].passport = e;
+  // fStore.values['gazData.equipmentMesm'][index].passport = e;
 }
 </script>
