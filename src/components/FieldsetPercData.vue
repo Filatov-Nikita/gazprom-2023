@@ -16,6 +16,7 @@
     <ElFormItem required label="Полное наименование организации" prop="percData.fullname">
       <ElInput v-model="fStore.values['percData.fullname']" />
     </ElFormItem>
+    <FieldsetAddress />
     <ElFormItem required label="Телефон 1" prop="percData.phone">
       <ElInput v-model="fStore.values['percData.phone']" v-maska data-maska="+7 (###) ### ## ##" />
     </ElFormItem>
@@ -33,7 +34,7 @@
 <script setup lang="ts">
 import { ElInput, ElFormItem } from 'element-plus';
 import { useFormStore } from '../store/form';
-
+import FieldsetAddress from './FieldsetAddress.vue'
 const fStore = useFormStore();
 
 </script>

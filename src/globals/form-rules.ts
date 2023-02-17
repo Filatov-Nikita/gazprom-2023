@@ -33,6 +33,10 @@ export const rules: FormRules = {
   'percData.egrip': [ requiredRule ],
   'percData.shortname': [ requiredRule ],
   'percData.fullname': [ requiredRule ],
+  'percData.city': [ requiredRule ],
+  'percData.street': [ requiredRule ],
+  'percData.house': [ requiredRule ],
+  'percData.flat': [ requiredRule ],
   'percData.phone': [ requiredRule, phoneNumber ],
   'percData.phone2': [ phoneNumber ],
   'percData.email': [
