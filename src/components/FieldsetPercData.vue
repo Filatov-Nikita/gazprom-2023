@@ -2,10 +2,10 @@
   <div>
     <div class="fieldset-label">Данные заявителя</div>
     <ElFormItem required label="ИНН" prop="percData.inn">
-      <ElInput v-model="fStore.values['percData.inn']" />
+      <ElInput v-model="fStore.values['percData.inn']" v-maska data-maska="############" />
     </ElFormItem>
     <ElFormItem required label="КПП" prop="percData.kpp">
-      <ElInput v-model="fStore.values['percData.kpp']" />
+      <ElInput v-model="fStore.values['percData.kpp']" v-maska data-maska="#########"/>
     </ElFormItem>
     <ElFormItem required label="ЕГРЮЛ/ЕГРИП" prop="percData.egrip">
       <ElInput v-model="fStore.values['percData.egrip']" />
@@ -17,10 +17,10 @@
       <ElInput v-model="fStore.values['percData.fullname']" />
     </ElFormItem>
     <ElFormItem required label="Телефон 1" prop="percData.phone">
-      <ElInput v-model="fStore.values['percData.phone']" />
+      <ElInput v-model="fStore.values['percData.phone']" v-maska data-maska="+7 (###) ### ## ##" />
     </ElFormItem>
     <ElFormItem label="Телефон 2" prop="percData.phone2">
-      <ElInput v-model="fStore.values['percData.phone2']" />
+      <ElInput v-model="fStore.values['percData.phone2']" v-maska data-maska="+7 (###) ### ## ##" />
     </ElFormItem>
     <ElFormItem label="Факс" prop="percData.fax">
       <ElInput v-model="fStore.values['percData.fax']" />

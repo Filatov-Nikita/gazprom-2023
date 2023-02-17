@@ -74,4 +74,10 @@
   .fields-wrapper {
     max-width: 730px;
   }
+
+  .upload-label {
+    font-size: 14px;
+    color: var(--el-text-color-regular);
+    margin-bottom: 6px;
+  }
 }

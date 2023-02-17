@@ -38,7 +38,7 @@
         <template #label>
           Источник данных ст.11 (22ЖКХ, Справка-подтверждение основного вида экономической деятельности, отчет о&nbsp;финансовых результатах, выписка из&nbsp;бухгалтерского баланса, письмо потребителя, др.)
         </template>
-        <ElInput v-model="fStore.values['energyTco.srcDataSt11']" placeholder="тыс. руб." />
+        <ElInput v-model="fStore.values['energyTco.srcDataSt11']" />
       </ElFormItem>
       <ElFormItem
         class="form-item"

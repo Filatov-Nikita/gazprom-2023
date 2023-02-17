@@ -8,7 +8,7 @@
       <ElInput v-model="fStore.values['clientData.pos']" />
     </ElFormItem>
     <ElFormItem required label="Телефон" prop="clientData.phone">
-      <ElInput v-model="fStore.values['clientData.phone']" />
+      <ElInput v-model="fStore.values['clientData.phone']" v-maska data-maska="+7 (###) ### ## ##" />
     </ElFormItem>
     <ElFormItem required label="Лицо ответственное за газовое хозяйство" prop="clientData.gazHoz.name">
       <ElInput v-model="fStore.values['clientData.gazHoz.name']" />
@@ -17,7 +17,7 @@
       <ElInput v-model="fStore.values['clientData.gazHoz.pos']" />
     </ElFormItem>
     <ElFormItem required label="Телефон" prop="clientData.gazHoz.phone">
-      <ElInput v-model="fStore.values['clientData.gazHoz.phone']" />
+      <ElInput v-model="fStore.values['clientData.gazHoz.phone']" v-maska data-maska="+7 (###) ### ## ##" />
     </ElFormItem>
     <ElFormItem required label="Куратор поставщика" prop="clientData.curator">
       <ElInput v-model="fStore.values['clientData.curator']" />
