@@ -1,57 +1,81 @@
 import { FormRules } from 'element-plus';
 
-const requiredTextRule = { required: true, message: 'Поле должно быть заполнено', trigger: 'blur' };
+export const requiredRule = { required: true, message: 'Поле должно быть заполнено', trigger: 'blur' } as const;
+export const numberRule = {
+  type: 'string',
+  validator: (_rule: any, value: unknown) => {
+    if(typeof value === 'string') {
+      return isNaN(Number(value)) === false && value[value.length - 1] !== '.';
+    }
+    return false;
+  },
+  message: 'Поле должно быть числом', trigger: 'blur'
+} as const;
+
+export const dateRule = {
+  type: 'date',
+  message: 'Поле должно быть датой',
+  trigger: 'change'
+} as const;
+
+export const phoneNumber = {
+  type: 'string',
+  pattern: /^\+7 \([0-9]{3}\) [0-9]{3} [0-9]{2} [0-9]{2}$/,
+  message: 'Поле должно быть телефоном',
+  trigger: 'blur'
+} as const;
 
 export const rules: FormRules = {
-  'primary.typePerc': [ requiredTextRule ],
-  'primary.typeReq': [ requiredTextRule ],
-  'percData.inn': [ requiredTextRule ],
-  'percData.kpp': [ requiredTextRule ],
-  'percData.egrip': [ requiredTextRule ],
-  'percData.shortname': [ requiredTextRule ],
-  'percData.fullname': [ requiredTextRule ],
-  'percData.phone': [ requiredTextRule ],
+  'primary.typePerc': [ requiredRule ],
+  'primary.typeReq': [ requiredRule ],
+  'percData.inn': [ requiredRule ],
+  'percData.kpp': [ requiredRule ],
+  'percData.egrip': [ requiredRule ],
+  'percData.shortname': [ requiredRule ],
+  'percData.fullname': [ requiredRule ],
+  'percData.phone': [ requiredRule, phoneNumber ],
+  'percData.phone2': [ phoneNumber ],
   'percData.email': [
-    requiredTextRule,
+    requiredRule,
     { type: 'email', message: 'Введите корректный email', trigger: ['blur'], }
   ],
-  'account.number': [ requiredTextRule ],
-  'account.bik': [ requiredTextRule ],
-  'account.korr': [ requiredTextRule ],
-  'account.name': [ requiredTextRule ],
-  'account.address': [ requiredTextRule ],
-  'gazData.from': [ { type: 'date', required: true, message: 'Поле должно быть датой', trigger: 'change' } ],
-  'gazData.yearCapacity': [ requiredTextRule ],
-  'clientData.dir': [ requiredTextRule ],
-  'clientData.pos': [ requiredTextRule ],
-  'clientData.phone': [ requiredTextRule ],
-  'clientData.gazHoz.name': [ requiredTextRule ],
-  'clientData.gazHoz.pos': [ requiredTextRule ],
-  'clientData.gazHoz.phone': [ requiredTextRule ],
-  'clientData.curator': [ requiredTextRule ],
-  'generalData.plan': [ requiredTextRule ],
-  'generalData.currentYear': [ requiredTextRule ],
-  'generalData.currentYearSuppose': [ requiredTextRule ],
-  'generalData.factLastYear': [ requiredTextRule ],
-  'generalData.factDeviation': [ requiredTextRule ],
+  'account.number': [ requiredRule ],
+  'account.bik': [ requiredRule ],
+  'account.korr': [ requiredRule ],
+  'account.name': [ requiredRule ],
+  'account.address': [ requiredRule ],
+  'gazData.from': [ requiredRule, dateRule ],
+  'gazData.yearCapacity': [ requiredRule, numberRule ],
+  'clientData.dir': [ requiredRule ],
+  'clientData.pos': [ requiredRule ],
+  'clientData.phone': [ requiredRule, phoneNumber ],
+  'clientData.gazHoz.name': [ requiredRule ],
+  'clientData.gazHoz.pos': [ requiredRule ],
+  'clientData.gazHoz.phone': [ requiredRule, phoneNumber ],
+  'clientData.curator': [ requiredRule ],
+  'generalData.plan': [ requiredRule, numberRule ],
+  'generalData.currentYear': [ requiredRule, numberRule ],
+  'generalData.currentYearSuppose': [ requiredRule, numberRule ],
+  'generalData.factLastYear': [ requiredRule, numberRule ],
+  'generalData.factDeviation': [ requiredRule, numberRule ],
   'generalData.periodLastYear': [ { required: true, type: 'array', message: 'Поле должно быть заполнено', trigger: 'blur' } ],
-  'generalData.count': [ requiredTextRule ],
+  'generalData.count': [ requiredRule, numberRule ],
   'generalData.reason': [ { required: true, message: 'Поле должно быть заполнено', trigger: 'change' } ],
-  'generalData.financeCurrentYear': [ requiredTextRule ],
-  'generalData.costCurrentYear': [ requiredTextRule ],
-  'energyNas.fuelReduce': [ requiredTextRule ],
-  'energyNas.gasSrc': [ requiredTextRule ],
-  'energyNas.total': [ requiredTextRule ],
-  'energyNas.tcj': [ requiredTextRule ],
-  'energyNas.budget': [ requiredTextRule ],
-  'energyNas.otherProd': [ requiredTextRule ],
-  'energyNas.energyPerc': [ requiredTextRule ],
-  'energyNas.src': [ requiredTextRule ],
-  'energyTco.totalItems': [ requiredTextRule ],
-  'energyTco.srcDataSt9': [ requiredTextRule ],
-  'energyTco.energyTotal': [ requiredTextRule ],
-  'energyTco.srcDataSt11': [ requiredTextRule ],
-  'energyTco.gasPercProd': [ requiredTextRule ],
-  'energyTco.gasPercNas': [ requiredTextRule ],
-  'energyTco.condition': [ requiredTextRule ],
+  'generalData.financeCurrentYear': [ requiredRule, numberRule ],
+  'generalData.costCurrentYear': [ requiredRule, numberRule ],
+  'energyNas.fuelReduce': [ requiredRule, numberRule ],
+  'energyNas.gasSrc': [ requiredRule, numberRule ],
+  'energyNas.total': [ requiredRule, numberRule ],
+  'energyNas.tcj': [ requiredRule, numberRule ],
+  'energyNas.budget': [ requiredRule, numberRule ],
+  'energyNas.otherProd': [ requiredRule, numberRule ],
+  'energyNas.energyPerc': [ requiredRule, numberRule ],
+  'energyNas.src': [ requiredRule ],
+  'energyTco.totalItems': [ requiredRule, numberRule ],
+  'energyTco.srcDataSt9': [ requiredRule ],
+  'energyTco.energyTotal': [ requiredRule, numberRule ],
+  'energyTco.srcDataSt11': [ requiredRule ],
+  'energyTco.gasPercProd': [ requiredRule, numberRule ],
+  'energyTco.gasPercNas': [ requiredRule, numberRule ],
+  'energyTco.condition': [ requiredRule, numberRule ],
 };
