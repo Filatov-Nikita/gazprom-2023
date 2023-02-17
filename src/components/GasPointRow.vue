@@ -1,6 +1,6 @@
 <template>
    <tr>
-      <td class="t-td t-td-left">{{ index }}</td>
+      <td class="t-td t-td-left">{{ index + 1 }}</td>
       <td
         class="t-td"
         v-for="month in monthsShort"

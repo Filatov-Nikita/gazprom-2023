@@ -81,6 +81,13 @@ export const useFormStore = defineStore('formStore', () => {
     'energyNas.otherProd': '',
     'energyNas.energyPerc': '',
     'energyNas.src': '',
+    'energyTco.totalItems': '',
+    'energyTco.srcDataSt9': '',
+    'energyTco.energyTotal': '',
+    'energyTco.srcDataSt11': '',
+    'energyTco.gasPercProd': '',
+    'energyTco.gasPercNas': '',
+    'energyTco.condition': '',
   });
 
   return {

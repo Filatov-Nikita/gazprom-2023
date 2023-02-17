@@ -78,4 +78,11 @@ export interface Values {
   'energyNas.otherProd': string,
   'energyNas.energyPerc': string,
   'energyNas.src': string,
+  'energyTco.totalItems': string,
+  'energyTco.srcDataSt9': string,
+  'energyTco.energyTotal': string,
+  'energyTco.srcDataSt11': string,
+  'energyTco.gasPercProd': string,
+  'energyTco.gasPercNas': string,
+  'energyTco.condition': string,
 }

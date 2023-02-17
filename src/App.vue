@@ -7,7 +7,7 @@
         :rules="rules"
         ref="formRef"
         label-position="left"
-        label-width="370px"
+        label-width="400px"
         class="tw-max-w-[1280px] tw-min-w-[1170px] tw-overflow-x-hidden"
         scroll-to-error
       >
@@ -26,6 +26,8 @@
           <FieldsetGeneralData />
           <ElDivider class="divider" />
           <FieldsetEnergyNas />
+          <ElDivider class="divider" />
+          <FieldsetEnergyTco />
         </div>
         <ElButton class="tw-mt-8" size="large" @click="submitForm(formRef)">
           Отправить
@@ -44,6 +46,7 @@ import FieldsetGasData from './components/FieldsetGasData.vue';
 import FieldsetClientData from './components/FieldsetClientData.vue';
 import FieldsetGeneralData from './components/FieldsetGeneralData.vue';
 import FieldsetEnergyNas from './components/FieldsetEnergyNas.vue';
+import FieldsetEnergyTco from './components/FieldsetEnergyTco.vue';
 import { ref } from 'vue';
 import { rules } from './globals/form-rules';
 import { useFormStore } from './store/form';
