@@ -19,7 +19,6 @@
       <ElUpload
         class="tw-mb-4"
         :auto-upload="false"
-        accept="application/pdf"
         :limit="3"
       >
         <template #trigger>

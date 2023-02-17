@@ -8,7 +8,7 @@
     <ElUpload
       class="tw-mb-4"
       :auto-upload="false"
-      accept="application/pdf"
+      accept="application/pdf,image/png,image/jpeg"
       :limit="1"
     >
       <template #trigger>
@@ -21,7 +21,7 @@
     <ElUpload
       class="tw-mb-4"
       :auto-upload="false"
-      accept="application/pdf"
+      accept="application/pdf,image/png,image/jpeg"
       :limit="1"
     >
       <template #trigger>
@@ -36,7 +36,7 @@
       <ElUpload
         class="tw-mb-4"
         :auto-upload="false"
-        accept="application/pdf"
+        accept="application/pdf,image/png,image/jpeg"
         :limit="1"
       >
         <template #trigger>
@@ -50,7 +50,7 @@
     <ElUpload
       class="tw-mb-4"
       :auto-upload="false"
-      accept="application/pdf"
+      accept="application/pdf,image/png,image/jpeg"
       :limit="1"
     >
       <template #trigger>
@@ -63,7 +63,7 @@
     <ElUpload
       class="tw-mb-4"
       :auto-upload="false"
-      accept="application/pdf"
+      accept="application/pdf,image/png,image/jpeg"
       :limit="1"
     >
       <template #trigger>
