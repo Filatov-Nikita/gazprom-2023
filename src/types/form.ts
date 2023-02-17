@@ -1,11 +1,11 @@
-import type { UploadFile, DateModelType } from 'element-plus';
+import type { DateModelType } from 'element-plus';
 
 export interface Eq {
   id: number,
   name: string,
   count: string,
   max: string,
-  passport: UploadFile | null
+  passport: FileId | null
 }
 
 export interface Mesm {
@@ -14,7 +14,7 @@ export interface Mesm {
   name: string,
   from: string,
   to: string,
-  passport: UploadFile | null,
+  passport: FileId | null,
 }
 
 export type GasPoint = {
@@ -31,6 +31,10 @@ export type GasPoint = {
   okt: number,
   nov: number,
   dec: number,
+}
+
+export interface FileId {
+  id: number
 }
 
 export interface Values {
@@ -87,5 +91,13 @@ export interface Values {
   'energyTco.gasPercProd': string,
   'energyTco.gasPercNas': string,
   'energyTco.condition': string,
-  'comment': string
+  'comment': string,
+  'attachments': FileId[] | null
+  'files.tep': FileId[] | null,
+  'files.jkh': FileId[] | null,
+  'files.tco': FileId[] | null,
+  'files.gio': FileId[] | null,
+  'files.aboutDir': FileId[] | null,
+  'files.financeBudget': FileId[] | null,
+  'files.contractCopies': FileId[] | null,
 }
