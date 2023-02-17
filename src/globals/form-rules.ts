@@ -37,6 +37,8 @@ export const rules: FormRules = {
   'generalData.periodLastYear': [ { required: true, type: 'array', message: 'Поле должно быть заполнено', trigger: 'blur' } ],
   'generalData.count': [ requiredTextRule ],
   'generalData.reason': [ { required: true, message: 'Поле должно быть заполнено', trigger: 'change' } ],
+  'generalData.financeCurrentYear': [ requiredTextRule ],
+  'generalData.costCurrentYear': [ requiredTextRule ],
   'energyNas.fuelReduce': [ requiredTextRule ],
   'energyNas.gasSrc': [ requiredTextRule ],
   'energyNas.total': [ requiredTextRule ],

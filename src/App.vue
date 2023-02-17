@@ -28,6 +28,8 @@
           <FieldsetEnergyNas />
           <ElDivider class="divider" />
           <FieldsetEnergyTco />
+          <ElDivider class="divider" />
+          <FieldsetFiles />
         </div>
         <ElButton class="tw-mt-8" size="large" @click="submitForm(formRef)">
           Отправить
@@ -47,6 +49,7 @@ import FieldsetClientData from './components/FieldsetClientData.vue';
 import FieldsetGeneralData from './components/FieldsetGeneralData.vue';
 import FieldsetEnergyNas from './components/FieldsetEnergyNas.vue';
 import FieldsetEnergyTco from './components/FieldsetEnergyTco.vue';
+import FieldsetFiles from './components/FieldsetFiles.vue';
 import { ref } from 'vue';
 import { rules } from './globals/form-rules';
 import { useFormStore } from './store/form';

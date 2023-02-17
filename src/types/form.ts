@@ -70,6 +70,8 @@ export interface Values {
   'generalData.periodLastYear': [DateModelType, DateModelType] | undefined,
   'generalData.count': string,
   'generalData.reason': string,
+  'generalData.financeCurrentYear': string,
+  'generalData.costCurrentYear': string,
   'energyNas.fuelReduce': string,
   'energyNas.gasSrc': string,
   'energyNas.total': string,
@@ -85,4 +87,5 @@ export interface Values {
   'energyTco.gasPercProd': string,
   'energyTco.gasPercNas': string,
   'energyTco.condition': string,
+  'comment': string
 }

@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { reactive } from 'vue';
+import { reactive, computed } from 'vue';
 import type { Values } from '../types/form';
 
 export const useFormStore = defineStore('formStore', () => {
@@ -73,6 +73,8 @@ export const useFormStore = defineStore('formStore', () => {
     'generalData.periodLastYear': undefined,
     'generalData.count': '',
     'generalData.reason': '',
+    'generalData.financeCurrentYear': '',
+    'generalData.costCurrentYear': '',
     'energyNas.fuelReduce': '',
     'energyNas.gasSrc': '',
     'energyNas.total': '',
@@ -88,9 +90,20 @@ export const useFormStore = defineStore('formStore', () => {
     'energyTco.gasPercProd': '',
     'energyTco.gasPercNas': '',
     'energyTco.condition': '',
+    'comment': ''
+  });
+
+  const isType1 = computed(() => {
+    return values['primary.typePerc'] === 'type1'
+  });
+
+  const isType2 = computed(() => {
+    return values['primary.typePerc'] === 'type2'
   });
 
   return {
     values,
+    isType1,
+    isType2
   }
 });
