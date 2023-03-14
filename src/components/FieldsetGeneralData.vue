@@ -1,6 +1,9 @@
 <template>
   <div>
     <div class="fieldset-label">Общие данные на основании объемов по заявке</div>
+    <div v-if="!fStore.isType1 && !fStore.isType2" class="tw-text-gray-400 tw-mb-8">
+      Для отображения полного списка полей выберите заявителя
+    </div>
     <ElFormItem class="form-item" label="Расчетные объемы поставки газа на плановый год" prop="generalData.plan">
       <ElInput v-model="fStore.values['generalData.plan']" placeholder="тыс. куб. м" />
     </ElFormItem>
