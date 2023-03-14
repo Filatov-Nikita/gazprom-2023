@@ -11,7 +11,22 @@
           <th class="app-table__th">* Номер</th>
           <th class="app-table__th">* Дата проверки</th>
           <th class="app-table__th">* Срок проверки</th>
-          <th class="app-table__th">* Паспорт</th>
+          <th class="app-table__th">
+            <span class="tw-flex tw-items-center">
+              Паспорт&nbsp;
+              <el-popover
+                :width="280"
+                trigger="hover"
+                content="Обязательно при изменении ГИО"
+              >
+                <template #reference>
+                  <ElIcon :size="14">
+                    <QuestionFilled />
+                  </ElIcon>
+                </template>
+              </el-popover>
+            </span>
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -91,10 +106,11 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ElButton, ElInput, ElFormItem, ElDatePicker, ElUpload, type UploadFile} from 'element-plus';
+import { ElButton, ElInput, ElFormItem, ElDatePicker, ElUpload, ElPopover, ElIcon, type UploadFile} from 'element-plus';
 import { useFormStore } from '../store/form';
 import { computed } from 'vue';
 import { requiredRule, dateRule, numberRule } from '../globals/form-rules';
+import { QuestionFilled } from '@element-plus/icons-vue';
 
 const fStore = useFormStore();
 
