@@ -10,7 +10,22 @@
           <th class="app-table__th">* Наименование</th>
           <th class="app-table__th">* Количество</th>
           <th class="app-table__th tw-w-[285px]">* Максимальный расход газа, м3/ч</th>
-          <th class="app-table__th">* Паспорт</th>
+          <th class="app-table__th">
+            <span class="tw-flex tw-items-center">
+              Паспорт&nbsp;
+              <el-popover
+                :width="280"
+                trigger="hover"
+                content="Обязательно при изменении ГИО"
+              >
+                <template #reference>
+                  <ElIcon :size="14">
+                    <QuestionFilled />
+                  </ElIcon>
+                </template>
+              </el-popover>
+            </span>
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -64,10 +79,11 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ElButton, ElInput, ElFormItem, ElUpload, type UploadFile } from 'element-plus';
+import { ElButton, ElInput, ElFormItem, ElUpload, ElPopover, ElIcon, type UploadFile } from 'element-plus';
 import { useFormStore } from '../store/form';
 import { computed } from 'vue';
 import { numberRule, requiredRule } from '../globals/form-rules';
+import { QuestionFilled } from '@element-plus/icons-vue';
 
 const fStore = useFormStore();
 
