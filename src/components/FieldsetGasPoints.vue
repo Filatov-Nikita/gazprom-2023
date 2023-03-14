@@ -24,8 +24,14 @@
           :index="index"
           :point="point"
           :canRemove="canRemove"
+          :sum="rowSums[index]"
           @remove="removeRow(index)"
         />
+        <tr key="total-count">
+          <td colspan="15" class="tw-p-2">
+            <span class="tw-text-sm tw-font-medium">Итого:</span> <span class="tw-text-sm">{{ total }}</span>
+          </td>
+        </tr>
       </tbody>
     </table>
     <ElButton class="tw-mt-2" type="primary" @click="appendRow">
@@ -65,6 +71,23 @@
   }
 
   const canRemove = computed(() => fStore.values.gazPoints.length > 1);
+
+  const rowSums = computed(() => {
+    const points = fStore.values.gazPoints;
+    return points.map(({id, ...months}) => {
+      return Object.values(months).reduce((acc, value) => {
+        acc += value;
+        return acc;
+      }, 0);
+    });
+  });
+
+  const total = computed(() => {
+    return rowSums.value.reduce((acc, sum) => {
+      acc += sum;
+      return acc;
+    }, 0)
+  });
 </script>
 <style scoped>
   .t-th {

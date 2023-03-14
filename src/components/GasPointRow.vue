@@ -9,7 +9,7 @@
           <ElInputNumber v-model="point[month]" :min="0" placeholder="тыс. м3" :controls="false" />
         </ElFormItem>
       </td>
-      <td class="t-td t-td-right">{{ total }}</td>
+      <td class="t-td t-td-right">{{ sum }}</td>
       <td class="t-td">
         <ElButton size="small" type="danger" @click="emit('remove')" :disabled="!canRemove">
           Удалить
@@ -20,26 +20,17 @@
 <script setup lang="ts">
   import { ElFormItem, ElButton, ElInputNumber } from 'element-plus';
   import { monthsShort } from '../globals/constants';
-  import { computed } from 'vue';
   import type { GasPoint } from '../types/form';
   import { requiredRule } from '../globals/form-rules';
 
-  const props = defineProps<{
+  defineProps<{
     point: GasPoint,
     index: number,
-    canRemove: boolean
+    canRemove: boolean,
+    sum: number
   }>();
 
   const emit = defineEmits<{(event: 'remove'): void}>();
-
-  const total = computed(() => {
-    return Object.entries(props.point).reduce((acc, [key, val]) => {
-      if(key !== 'id') {
-        acc += val;
-      }
-      return acc;
-    }, 0);
-  });
 </script>
 <style scoped>
 .t-td {
