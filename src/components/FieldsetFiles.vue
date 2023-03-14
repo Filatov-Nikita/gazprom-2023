@@ -6,6 +6,9 @@
     <div>
       <FieldsetFilesType1 v-if="fStore.isType1" />
       <FieldsetFilesType2 v-else-if="fStore.isType2" />
+      <p class="tw-text-gray-400 tw-mb-2" v-else>
+        Выберите заявителя для отображения списка документов
+      </p>
       <ElFormItem class="comment" label="Комментарий" prop="comment">
         <el-input
         v-model="fStore.values.comment"
