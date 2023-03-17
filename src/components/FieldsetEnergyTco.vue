@@ -63,7 +63,7 @@
         prop="energyTco.gasPercNas"
       >
         <template #label>
-          Необходимый критерий, более 75% ст.21 > 75% (истина) ст.21 &lt; 75% (ложь)
+          Необходимый критерий более 75% <br> ст.21 > 75% (истина) ст.21 &lt; 75% (ложь)
         </template>
         <ElInput v-model="fStore.values['energyTco.gasPercNas']" placeholder="%" />
       </ElFormItem>

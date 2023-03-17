@@ -29,7 +29,7 @@
       </template>
     </ElUpload>
     <div class="upload-label">
-      Справка подтверждения основного вида экономической деятельности ТСО
+      Справка-подтверждение основного вида экономической деятельности ТСО
     </div>
     <div class="tw-flex tw-space-x-4">
       <el-button @click="showDialod = true">Образец</el-button>
@@ -58,7 +58,7 @@
       </template>
     </ElUpload>
     <div class="upload-label">
-      О смене руководителя (в случае руководителя)
+      О смене руководителя (в случае смены руководителя)
     </div>
     <ElUpload
       class="tw-mb-4"
