@@ -22,15 +22,24 @@
       <ElInput v-model="fStore.values['generalData.factLastYear']" placeholder="тыс. куб. м" />
     </ElFormItem>
     <ElFormItem class="form-item" label="Отклонение расчетных объемов на плановый год относительно факта потребления прошлого года" prop="generalData.factDeviation">
-      <ElInput v-model="fStore.values['generalData.factDeviation']" placeholder="%" />
+      <ElInput v-model="fStore.values['generalData.factDeviation']" placeholder="тыс. куб. м" />
     </ElFormItem>
-    <ElFormItem class="form-item" label="Период потребления в прошлом году" prop="generalData.periodLastYear">
+    <ElFormItem class="form-item" label="Период потребления в прошлом году" prop="generalData.periodLastYearFrom">
       <ElDatePicker
-        type="monthrange"
-        v-model="fStore.values['generalData.periodLastYear']"
-        range-separator="По"
+        class="date-picker"
+        placeholder="С дата"
+        v-model="fStore.values['generalData.periodLastYearFrom']"
         value-format="YYYY-MM-DD"
-        :clearable="false"
+        format="DD.MM.YYYY"
+      />
+    </ElFormItem>
+    <ElFormItem class="form-item" prop="generalData.periodLastYearFromTo">
+      <ElDatePicker
+        class="date-picker"
+        placeholder="По дата"
+        v-model="fStore.values['generalData.periodLastYearTo']"
+        value-format="YYYY-MM-DD"
+        format="DD.MM.YYYY"
       />
     </ElFormItem>
     <template v-if="fStore.isType1">
