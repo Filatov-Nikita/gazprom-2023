@@ -33,7 +33,7 @@
         format="DD.MM.YYYY"
       />
     </ElFormItem>
-    <ElFormItem class="form-item" prop="generalData.periodLastYearFromTo">
+    <ElFormItem class="form-item" prop="generalData.periodLastYearTo">
       <ElDatePicker
         class="date-picker"
         placeholder="По дата"
@@ -63,8 +63,11 @@
             value="castFact"
             label="За счет приведения расчетных объемов к фактическому потреблению"
           />
-          <ElOption value="other" label="Другая причина" />
+          <ElOption value="other" label="Другая причина (указать какая)" />
         </ElSelect>
+      </ElFormItem>
+      <ElFormItem v-if="fStore.values['generalData.reason'] === 'other'" class="form-item" label="Причина" prop="generalData.reasonText">
+        <ElInput v-model="fStore.values['generalData.reasonText']" />
       </ElFormItem>
     </template>
     <template v-else-if="fStore.isType2">

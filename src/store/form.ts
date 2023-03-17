@@ -78,6 +78,7 @@ export const useFormStore = defineStore('formStore', () => {
     'generalData.periodLastYearTo': '',
     'generalData.count': '',
     'generalData.reason': '',
+    'generalData.reasonText': '',
     'generalData.financeCurrentYear': '',
     'generalData.costCurrentYear': '',
     'energyNas.fuelReduce': '',

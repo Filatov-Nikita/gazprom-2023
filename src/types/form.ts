@@ -79,6 +79,7 @@ export interface Values {
   'generalData.periodLastYearTo': string,
   'generalData.count': string,
   'generalData.reason': string,
+  'generalData.reasonText': string,
   'generalData.financeCurrentYear': string,
   'generalData.costCurrentYear': string,
   'energyNas.fuelReduce': string,
