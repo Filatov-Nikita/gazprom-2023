@@ -25,14 +25,22 @@
           <ElDivider class="divider" />
           <FieldsetGeneralData />
           <ElDivider class="divider" />
-          <FieldsetEnergyNas />
-          <ElDivider class="divider" />
-          <FieldsetEnergyTco />
-          <ElDivider class="divider" />
+          <template v-if="fStore.values['primary.typePerc'] === 'type1'">
+            <FieldsetEnergyNas />
+            <ElDivider class="divider" />
+            <FieldsetEnergyTco />
+            <ElDivider class="divider" />
+          </template>
           <FieldsetFiles />
         </div>
         <ElButton class="tw-mt-8" size="large" @click="submitForm(formRef)">
           Отправить
+        </ElButton>
+        <ElButton class="tw-mt-8" size="large">
+          Сохранить черновик
+        </ElButton>
+        <ElButton class="tw-mt-8" size="large">
+          Закрыть
         </ElButton>
       </ElForm>
     </ElMain>
