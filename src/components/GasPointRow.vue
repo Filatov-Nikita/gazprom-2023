@@ -6,7 +6,13 @@
         v-for="month in monthsShort"
       >
         <ElFormItem label-width="0px" :rules="requiredRule" :prop="`gazPoints.${index}.${month}`">
-          <ElInputNumber v-model="point[month]" :min="0" placeholder="тыс. м3" :controls="false" />
+          <ElInputNumber
+            :modelValue="point[month]"
+            :min="0"
+            placeholder="тыс. м3"
+            :controls="false"
+            @change="$event => point[month] = <number>$event"
+          />
         </ElFormItem>
       </td>
       <td class="t-td t-td-right">{{ sum }}</td>

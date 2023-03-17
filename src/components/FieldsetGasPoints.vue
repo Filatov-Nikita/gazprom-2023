@@ -28,8 +28,12 @@
           @remove="removeRow(index)"
         />
         <tr key="total-count">
-          <td colspan="15" class="tw-p-2">
-            <span class="tw-text-sm tw-font-medium">Итого:</span> <span class="tw-text-sm">{{ total }}</span>
+          <td class="tw-p-2 tw-text-sm tw-font-medium" key="total-count-title">Итого:</td>
+          <td class="tw-p-2 tw-text-center" v-for="key in monthList" :key="key">
+            <span class="tw-text-sm">{{ colSums[key] }}</span>
+          </td>
+          <td class="tw-p-2" key="total-count-all">
+            <span class="tw-text-sm">{{ total }}</span>
           </td>
         </tr>
       </tbody>
@@ -66,6 +70,8 @@
     });
   }
 
+  const monthList = [ 'jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec' ] as const;
+
   function removeRow(index: number) {
     fStore.values.gazPoints.splice(index, 1);
   }
@@ -80,6 +86,17 @@
         return acc;
       }, 0);
     });
+  });
+
+  const colSums = computed(() => {
+    const points = fStore.values.gazPoints;
+    return monthList.reduce((acc, key) => {
+      acc[key] = points.reduce((acc, point) => {
+        acc += point[key];
+        return acc;
+      }, 0);
+      return acc;
+    }, {} as Record<string, number>);
   });
 
   const total = computed(() => {
